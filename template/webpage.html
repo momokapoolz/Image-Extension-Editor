@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <p style="background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg');"></p>
     <div class = "container">
       <h1 class="text-center">Image Editing Website</h1>
       <form action="/edit" enctype="multipart/form-data" method="post">
@@ -18,18 +19,20 @@
 
         <div class="input-group">
           <select class="form-select" id="operation" aria-label="Example select with button addon">
-            <option selected>Choose...</option>
+            <option selected>Choose format to convert</option>
             <option value="cjpg">Convert image to JPG format</option>
             <option value="cpng">Convert image to PNG format</option>
             <option value="cwebp">Convert image to WEBP format</option>
           </select>
           <button class="btn btn-outline-secondary" type="button">Button</button>
         </div>
+        <div class="d-grid gap-2 d-md-block">
+          <button class="btn btn-primary" type="button">Submit</button>
+        </div>
       </form>
+      
     </div>
-    <div class="d-grid gap-2 d-md-block">
-      <button class="btn btn-primary" type="button">Submit</button>
-    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>

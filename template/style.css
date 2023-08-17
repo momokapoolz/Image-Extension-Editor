@@ -1,5 +1,7 @@
-.d-grid gap-2 d-md-block {
-    align-items: center;
-    size-adjust: 100px;
-    right: 40%;
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg");
 }
