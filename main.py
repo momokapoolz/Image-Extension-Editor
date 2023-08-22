@@ -14,6 +14,10 @@ def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+def processImage(filename, operation):
+    pass
+    #image = cv2.imread(f"uploads/{filename}")
+
 
 @app.route('/')
 def starter():
@@ -21,22 +25,23 @@ def starter():
 
 
 @app.route("/edit", methods = ["GET", "POST"] )
-def edit():
+def edit():               
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
-            return redirect(request.url)
+            return 'No file error'
         file = request.files['file']
+        operation = request.form['operation']
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file.filename == '':
             flash('No selected file')
-            return redirect(request.url)
+            return 'No seleted file error'
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('download_file', name=filename))
+            return f"Your file <a href= '/static/{filename}'> here </a> "
 
 app.run(debug= True)
 
