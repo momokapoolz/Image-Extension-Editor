@@ -24,8 +24,20 @@ def processImage(filename, operation):
             newFilename = f"static/{filename}"
             cv2.imwrite(newFilename, image_gray)
             return newFilename
-
-
+        case "cjpg":
+            newFilename = f"static/{filename.split('.')[0] + '.jpg'}"
+            cv2.imwrite(newFilename, image)
+            return newFilename
+        case "cpng":
+            newFilename = f"static/{filename.split('.')[0] + '.png'}"
+            cv2.imwrite(newFilename, image)
+            return newFilename
+        case "cwebp":
+            newFilename = f"static/{filename.split('.')[0] + '.webp'}"
+            cv2.imwrite(newFilename, image)
+            return newFilename
+        
+        
 
 
 @app.route('/')
