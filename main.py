@@ -4,6 +4,10 @@ from werkzeug.utils import secure_filename   #uploading file method of Flask
 import cv2
 
 
+
+
+
+
 UPLOAD_FOLDER = 'upload'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
